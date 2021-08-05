@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "reminder-app-android",
+    "slug": "snack-76bac1f7-893b-42ea-a79c-c0f70e63e491",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./icon.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.aarav123.Reminder"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

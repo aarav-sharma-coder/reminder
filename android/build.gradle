@@ -1,0 +1,64 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        buildToolsVersion = "29.0.3"
+        minSdkVersion = 21
+        compileSdkVersion = 30
+        targetSdkVersion = 30
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:4.1.0")
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url("$rootDir/../node_modules/react-native/android")
+        }
+        maven {
+            // Android JSC is installed from npm
+            url("$rootDir/../node_modules/jsc-android/dist")
+        }
+
+        google()
+        jcenter()
+        maven { url 'https://www.jitpack.io' }
+    }
+}
+ext {
+    googlePlayServicesVersion = "<Your play services version>" // default: "+"
+    firebaseMessagingVersion = "<Your Firebase version>" // default: "21.1.0"
+
+    // Other settings
+    compileSdkVersion = <Your compile SDK version> // default: 23
+    buildToolsVersion = "<Your build tools version>" // default: "23.0.1"
+    targetSdkVersion = <Your target SDK version> // default: 23
+    supportLibVersion = "<Your support lib version>" // default: 23.1.1
+}
+buildscript {
+    
+    dependencies {
+        
+        classpath('com.google.gms:google-services:4.3.3')
+        
+    }
+}
+dependencies {
+    implementation project(':react-native-background-task')
+  ...
+  implementation 'com.google.firebase:firebase-analytics:17.3.0'
+  ...
+}
+
+apply plugin: 'com.google.gms.google-services'
